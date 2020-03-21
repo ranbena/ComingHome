@@ -7,9 +7,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { Nav, Navbar, Container, Button } from "react-bootstrap"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -24,23 +23,28 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+    <Container>
+      <header>
+        <Navbar expand="lg">
+          <Navbar.Brand href="/">Coming Home</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse>        
+            <Nav className="mr-auto">
+              <Link to="manifesto">Our Manifesto</Link>
+              <Link to="community">Community</Link>
+              <Link to="about">About Us</Link>
+            </Nav>
+          </Navbar.Collapse>
+          <Button variant="outline-secondary" href="https://www.patreon.com/m/CityTree">Become a Patron</Button>
+        </Navbar>
+      </header>
+      <div>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          Footer content
         </footer>
       </div>
-    </>
+    </Container>
   )
 }
 
