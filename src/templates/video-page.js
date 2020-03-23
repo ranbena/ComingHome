@@ -1,36 +1,35 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
+import { graphql } from "gatsby"
+import { Container } from "react-bootstrap"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 
 const VideoPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
-  const { previous, next } = pageContext
+  const { title, season, episode, date, youtube_id } = post.frontmatter
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
-      <article>
-        <header>
+      <SEO title={title} />
+      <Container>
+        <article>
           <h1>
-            {post.frontmatter.title}
+          Season {season} Ep. {episode}: {title}
           </h1>
           <p>
-            {post.frontmatter.date}
+            {date} <br /><br />
             <iframe
               title="main-video"
               allowFullScreen="allowFullScreen"
-              src={`https://www.youtube.com/embed/${post.frontmatter.youtube_id}?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560`}
+              src={`https://www.youtube.com/embed/${youtube_id}?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560`}
               width="100%"
               height="600"
               allowtransparency="true"
               frameBorder="0" />
           </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-      </article>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
+      </Container>
     </Layout>
   )
 }
