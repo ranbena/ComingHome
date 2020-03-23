@@ -1,10 +1,15 @@
 module.exports = {
   siteMetadata: {
     title: `Coming Home`,
-    description: ``,
-    author: `@gatsbyjs`,
+    author: `@ranbena`,
+    siteUrl: `http://citytree.net/cominghome-test`,
+    description: `A free online platform that gives you a practical toolkit to help tell a new story to the world.`,
+    banner: `/og.png`,
+    siteLanguage: `en`,
+    ogLanguage: `en_US`,
+    facebook: `CityTree`,
   },
-  pathPrefix: `/cominghome`,
+  pathPrefix: `/cominghome-test`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

@@ -15,7 +15,7 @@ import {
 import { MdFileDownload } from "react-icons/md";
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import SubscribeModal from "../components/subscribe"
 import VideoCarousel from "../components/video-carousel"
 import MainVideo from "../../content/video-posts/S01E00/S01 Intro.mp4"
@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Coming Home" />
       <Container className="mb-5">
         <Row className="flex-row-reverse">
           <Col sm={12} lg={4} className="mb-5">
