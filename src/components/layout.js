@@ -9,6 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { Nav, Navbar, Container, Button } from "react-bootstrap"
+import { MdLink } from "react-icons/md"
+import logo from "../images/footer-logo.png"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -33,7 +35,20 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
         <footer>
-          Footer content
+          <Container>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="http://citytree.net/" target="_blank">
+                <MdLink /> To CityTree's website (hebrew)
+              </a>
+              <a href="http://citytree.net/" target="_blank">
+                <img src={logo} alt="עץבעיר" height="100" />
+              </a>
+              <div id="info">
+                We're here for you<br />
+                <a href="tel:+97235254196">03-5254196</a> | <a href="mailto:tree@citytree.net">tree@citytree.net</a>
+              </div>
+            </div>
+          </Container>
         </footer>
       </div>
     </>
