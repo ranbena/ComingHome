@@ -7,44 +7,36 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import { Nav, Navbar, Container, Button } from "react-bootstrap"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <Container>
-      <header>
-        <Navbar expand="lg">
-          <Navbar.Brand href="/">Coming Home</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse>        
-            <Nav className="mr-auto">
-              <Link to="manifesto">Our Manifesto</Link>
-              <Link to="community">Community</Link>
-              <Link to="about">About Us</Link>
-            </Nav>
-          </Navbar.Collapse>
-          <Button variant="outline-secondary" href="https://www.patreon.com/m/CityTree">Become a Patron</Button>
-        </Navbar>
-      </header>
+    <>
+      <Container>
+        <header>
+          <Navbar expand="lg">
+            <Navbar.Brand href="/">Coming Home</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse>        
+              <Nav title="Coming Soon" className="mr-auto">
+                <Link to="manifesto" className="nav-link disabled">Our Manifesto</Link>
+                <Link to="community" className="nav-link disabled">Community</Link>
+                <Link to="about" className="nav-link disabled">About Us</Link>
+              </Nav>
+              <Button variant="outline-secondary" href="https://www.patreon.com/m/CityTree" target="_blank">Become a Patron</Button>
+            </Navbar.Collapse>
+          </Navbar>
+        </header>
+      </Container>
       <div>
         <main>{children}</main>
         <footer>
           Footer content
         </footer>
       </div>
-    </Container>
+    </>
   )
 }
 

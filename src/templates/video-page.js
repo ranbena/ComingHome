@@ -10,10 +10,7 @@ const VideoPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={post.frontmatter.title} />
       <article>
         <header>
           <h1>
@@ -26,7 +23,7 @@ const VideoPostTemplate = ({ data, pageContext }) => {
               allowFullScreen="allowFullScreen"
               src={`https://www.youtube.com/embed/${post.frontmatter.youtube_id}?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560`}
               width="100%"
-              height="400"
+              height="600"
               allowtransparency="true"
               frameBorder="0" />
           </p>
@@ -81,8 +78,10 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
         youtube_id
+        season
+        episode
+        duration
       }
     }
   }

@@ -1,25 +1,32 @@
 :root {
-  --primary-color: #3a4c28;
-  --primary-color-darker: #222f15;
+  --primary-color: #425f27;
+  --primary-color-darker: #3a4c28;
   --secondary-color: #b8c985;
+  --gray-color: #a6a89d;
+  --gray-color-darker: #737764;
 }
 body {
   font-family: Assistant;
-  color: var(--primary-color);
+  color: var(--primary-color-darker);
   font-size: 15px;
 }
 
 h1, h2, h3, h4 {
   font-family: 'Proza Libre';
   font-weight: bold;
+  color: var(--primary-color);
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--primary-color-darker);
 }
 
 .bg1 {
@@ -29,8 +36,42 @@ a {
   background: var(--secondary-color);
 }
 
+section {
+  padding: 40px 0;
+}
+
+header {
+  background: url('../images/leaf-header.jpg') no-repeat 148px 0/120px;
+}
+
 .navbar {
-  padding: 0;
+  padding: 20px 0 60px;
+}
+
+.navbar-nav {
+  align-self: flex-start;
+  margin-left: 100px;  
+}
+
+.navbar-brand {
+  background: url('../images/logo.png') no-repeat 0 0/167px;
+  width: 167px;
+  height: 89px;
+  text-indent: -200px;
+  overflow: hidden;
+  margin-top: 44px;
+}
+
+@media (max-width: 991px) {
+  header {
+    background-position: 129px 0;
+  }
+  .navbar-nav {
+    margin: 20px 0 10px;
+  }
+  .navbar-brand {
+    margin-top: 38px;
+  }
 }
 
 .btn-primary {
@@ -44,6 +85,92 @@ a {
   border-color: var(--primary-color-darker) !important;
 }
 
+.btn-outline-primary {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+@media (max-width: 767px) {
+  .main-video {
+    height: 300px;
+  }
+}
+
+@media (max-width: 475px) {
+  .main-video {
+    height: 240px;
+  }
+}
+
+.main-video-container {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.main-video-container:before {
+  content: '';
+  position: absolute;
+  left: 70%;
+  top: -101px;
+  background: url('../images/leaf-video-top.jpg') no-repeat 0 0/100%;
+  width: 172px;
+  height: 144px;
+}
+
+@media (max-width: 575px) {
+  .main-video-container:before {
+    display: none;
+  }
+}
+
+.main-video-container:after {
+  content: '';
+  position: absolute;
+  left: 45%;
+  bottom: 8px;
+  background: url('../images/leaf-video-bottom.jpg') no-repeat 0 0/100%;
+  width: 182px;
+  height: 70px;
+}
+
+@media (max-width: 1200px) {
+  .main-video-container:after {
+    left: 38%
+  }
+}
+
+@media (max-width: 768px) {
+  .main-video-container:after {
+    left: 30%
+  }
+}
+
+@media (max-width: 575px) {
+  .main-video-container:after {
+    display: none;
+  }
+}
+
+.actions .btn {
+  margin-left: 3px;
+  background: var(--secondary-color) !important;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 19px;
+  padding: 0;
+}
+.actions .btn:hover {
+  background: var(--primary-color) !important;
+}
+
 /* This is a hack to hide the "Comments" text in .disqus-comment-count */
 .comments-tab {
   display: block;
@@ -52,7 +179,7 @@ a {
 }
 
 .disqus-comment-count {
-  margin-right: -86px;
+  margin-right: -81px;
   word-spacing: 10px;
 }
 /* End of hack */
@@ -71,7 +198,7 @@ a {
   content: '';
 }
 
-.nav-item:first-child {
+.nav-tabs .nav-item:first-child {
   margin-left: -17px;
 }
 
@@ -79,45 +206,32 @@ a {
   float: right;
 }
 
-
-/* coming soon code */
-.soon-modal .modal-content {
-  background: url('../images/soon-leaf1.jpg') 78% -38px/140px no-repeat, url('../images/soon-leaf2.jpg') no-repeat 12% bottom/170px, url('../images/soon-logo.gif') no-repeat center bottom/80px;
-  background-color: white;
-  max-width: 690px;
-  margin: 0 auto;
+section.patron {
+  background-color: #edf4ea;
+  position: relative;
 }
 
-.soon-modal .modal-body {
-  padding: 0 4rem;
-}
-
-.soon-modal .modal-header {
-  margin-top: 38px;
-}
-
-.soon-modal .carousel-item {
-  height: 386px;
-}
-
-.soon-modal .carousel-item:last-child {
-  background-color: rgba(255,255,255,0.8);
-}
-
-.soon-modal p {
-  font-size: 17px;
-}
-
-body {
-  background: url('../images/Artboard\ 4.png') no-repeat right top/100%, url('../images/Artboard\ 2.png') no-repeat left top/20%;
-}
-
-body:after {
+section.patron:after {
   content: '';
   position: absolute;
   right: 0;
+  top: -280px;
+  background: url('../images/leaf-right.png') no-repeat 0 0/100%;
+  width: 223px;
+  height: 384px;
+}
+
+section.community {
+  position: relative;
+  min-height: 372px;
+}
+
+section.community:after {
+  content: '';
+  position: absolute;
+  left: 0;
   bottom: 0;
-  width: 100%;
-  height: 33vw;
-  background: url('../images/Artboard\ 6.png') no-repeat right 140px/100%;
+  background: url('../images/leaf-community.jpg') no-repeat 0 0/100%;
+  width: 358px;
+  height: 372px;
 }
