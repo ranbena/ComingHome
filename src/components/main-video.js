@@ -7,15 +7,11 @@ import {
   EmailIcon,
   FacebookShareButton,
   FacebookIcon,
-  TwitterShareButton,
-  TwitterIcon,
   WhatsappShareButton,
   WhatsappIcon,
 } from "react-share";
 import { MdFileDownload, MdPlayCircleOutline } from "react-icons/md";
-
 import S01I01 from "../../content/video-posts/S01I01/video.mp4"
-
 import "./main-video.css"
 
 // const disqusConfig = {
@@ -68,9 +64,6 @@ const MainVideo = () => {
           <FacebookShareButton url="http://citytree.net/cominghome" className="btn btn-primary" title="Share on Facebook">
             <FacebookIcon round size={32} bgStyle={{fill: 'transparent'}} />
           </FacebookShareButton>
-          <TwitterShareButton url="http://citytree.net/cominghome" className="btn btn-primary" title="Share on Twitter">
-            <TwitterIcon round size={32} bgStyle={{fill: 'transparent'}} />
-          </TwitterShareButton>
           <WhatsappShareButton url="http://citytree.net/cominghome" className="btn btn-primary" title="Share with Whatsapp">
             <WhatsappIcon round size={32} bgStyle={{fill: 'transparent'}} />
           </WhatsappShareButton>
