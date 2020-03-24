@@ -5,7 +5,10 @@ import PropTypes from "prop-types"
 import { Button } from "react-bootstrap"
 import { MdPlayCircleOutline } from "react-icons/md";
 import ShareActions from "./share-actions"
-import S01I01 from "../../content/video-posts/S01I01/video.mp4"
+import intro1 from "../../content/video-posts/S01Intros/S01-intro1.mp4"
+import intro2 from "../../content/video-posts/S01Intros/S01-intro2.mp4"
+import intro3 from "../../content/video-posts/S01Intros/S01-intro3.mp4"
+import intro4 from "../../content/video-posts/S01Intros/S01-intro4.mp4"
 import "./main-video.css"
 
 // const disqusConfig = {
@@ -16,16 +19,16 @@ import "./main-video.css"
 
 const videos = [{
   youtube_id: '4bHQXiLrnhk',
-  static_file: S01I01,
+  static_file: intro1,
 }, {
   youtube_id: '1EeryjflCrk',
-  static_file: S01I01,
+  static_file: intro2,
 }, {
   youtube_id: 'kAkueYwyg6Y',
-  static_file: S01I01,
+  static_file: intro3,
 }, {
   youtube_id: 'yIX9gT5mYGo',
-  static_file: S01I01,
+  static_file: intro4,
 }]
 
 const MainVideo = ({ siteUrl }) => {

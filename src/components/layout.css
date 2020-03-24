@@ -92,6 +92,10 @@ header {
   }
 }
 
+.navbar-nav .nav-link {
+  margin-right: 40px;
+}
+
 .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);

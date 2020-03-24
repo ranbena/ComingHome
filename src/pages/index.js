@@ -18,10 +18,14 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Coming Home" />
       <Container className="mb-2">
-        <Row className="flex-row-reverse">
+        <Row>
+          <Col sm={12} lg={9} className="main-video-container">
+            <h1>Introduction - <em>Coronavirus and Its Call to Come Home</em></h1>
+            <MainVideo siteUrl={siteUrl} />
+          </Col>
           <Col sm={12} lg={3} className="mb-5">
             <h2 className="d-sm-none d-lg-block mt-5 pt-3">Overview</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>Coming Home is a video series that shares the “home-wisdom” of CityTree, an urban ecological learning center in the heart of Tel Aviv. As we collectively experience a collapse of the world as we know it, Tami Zori invites humanity into a new way of being--one that is in harmony with all life on Earth by reconnecting to our bodies, houses, and planet.</p>
             <Button variant="primary" onClick={() => setModalShow(true)}>
               Get Notifications
             </Button>
@@ -29,10 +33,6 @@ const IndexPage = ({ data }) => {
               show={modalShow}
               onHide={() => setModalShow(false)}
             />
-          </Col>
-          <Col sm={12} lg={9} className="main-video-container">
-            <h1>Introduction - <em>Coronavirus and Its Call to Come Home</em></h1>
-            <MainVideo siteUrl={siteUrl} />
           </Col>
         </Row>
       </Container>
