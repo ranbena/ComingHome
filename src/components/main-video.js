@@ -2,15 +2,8 @@ import React from "react"
 // import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 // import { Tabs, Tab } from "react-bootstrap"
 import { Button } from "react-bootstrap"
-import {
-  EmailShareButton,
-  EmailIcon,
-  FacebookShareButton,
-  FacebookIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-} from "react-share";
-import { MdFileDownload, MdPlayCircleOutline } from "react-icons/md";
+import { MdPlayCircleOutline } from "react-icons/md";
+import ShareActions from "./share-actions"
 import S01I01 from "../../content/video-posts/S01I01/video.mp4"
 import "./main-video.css"
 
@@ -42,6 +35,7 @@ const MainVideo = () => {
     <div className="main-video">
       <iframe
         className="bg2 full-video"
+        allowFullScreen="allowFullScreen"
         title="video"
         type="text/html"
         width="100%"
@@ -57,20 +51,7 @@ const MainVideo = () => {
             </div>
           ))}
         </div>
-        <div className="actions">
-          <EmailShareButton url="http://citytree.net/cominghome" className="btn btn-primary" title="Email this page">
-            <EmailIcon round size={32} bgStyle={{fill: 'transparent'}} />
-          </EmailShareButton> 
-          <FacebookShareButton url="http://citytree.net/cominghome" className="btn btn-primary" title="Share on Facebook">
-            <FacebookIcon round size={32} bgStyle={{fill: 'transparent'}} />
-          </FacebookShareButton>
-          <WhatsappShareButton url="http://citytree.net/cominghome" className="btn btn-primary" title="Share with Whatsapp">
-            <WhatsappIcon round size={32} bgStyle={{fill: 'transparent'}} />
-          </WhatsappShareButton>
-          <Button href={static_file} download className="btn-download" title="Download this video">
-            <MdFileDownload />
-          </Button>
-        </div>
+        <ShareActions url="http://citytree.net/cominghome" staticFile={static_file} />
       </div>
       {/* <Tabs defaultActiveKey="details">
         <Tab eventKey="details" title="Details">

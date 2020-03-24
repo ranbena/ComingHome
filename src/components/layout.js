@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           <Container>
-            <div class="d-flex justify-content-between align-items-center">
+            <div className="d-flex justify-content-between align-items-center">
               <a href="http://citytree.net/" target="_blank">
                 <MdLink /> To CityTree's website (hebrew)
               </a>

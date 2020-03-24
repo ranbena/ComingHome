@@ -1,0 +1,38 @@
+.actions {
+  flex-shrink: 0;
+}
+
+.actions .btn {
+  margin-left: 3px;
+  background: var(--secondary-color) !important;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 19px;
+  padding: 0;
+}
+.actions .btn:hover {
+  background: var(--primary-color) !important;
+}
+
+.video-iframe {
+  height: 600px;
+}
+
+@media (max-width: 991px) {
+  .video-iframe {
+    height: 400px;
+  }
+}
+@media (max-width: 767px) {
+  .video-iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 475px) {
+  .video-iframe {
+    height: 240px;
+  }
+}
