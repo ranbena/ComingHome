@@ -18,13 +18,13 @@ const videos = [{
   youtube_id: '4bHQXiLrnhk',
   static_file: S01I01,
 }, {
-  youtube_id: '4Ok0gL9xplI',
+  youtube_id: '1EeryjflCrk',
   static_file: S01I01,
 }, {
-  youtube_id: '81snpPninKg',
+  youtube_id: 'kAkueYwyg6Y',
   static_file: S01I01,
 }, {
-  youtube_id: 'pRQHlJNySLI',
+  youtube_id: 'yIX9gT5mYGo',
   static_file: S01I01,
 }]
 

@@ -36,7 +36,7 @@ const settings = {
 
 const sortByEpisode = (e1, e2) => e1.node.frontmatter.episode > e2.node.frontmatter.episode ? 1 : -1
 
-const VideoCarousel  = ({ edges, season, bgColor, title }) => {
+const VideoCarousel  = ({ edges, season, bgColor, title, placeholder }) => {
   const filtered = edges.filter(e => e.node.frontmatter.season === season)
   const sorted = filtered.sort(sortByEpisode)
 
@@ -44,7 +44,7 @@ const VideoCarousel  = ({ edges, season, bgColor, title }) => {
     <section style={{backgroundColor: bgColor}} className="video-carousel">
       <Container>
         {title && <h2>{title} {!sorted.length && <MdLockOutline className="title-lock-icon" />}</h2>}
-        {!!sorted.length && (
+        {!!sorted.length ? (
           <Slider {...settings}>
             {sorted.map(({ node }) => {
               const { slug } = node.fields
@@ -75,6 +75,8 @@ const VideoCarousel  = ({ edges, season, bgColor, title }) => {
               )
             })}
           </Slider>
+        ) : (
+          <p>- {placeholder} -</p>
         )}
       </Container>
     </section>
@@ -86,12 +88,14 @@ VideoCarousel.propTypes = {
   season: PropTypes.string,
   title: PropTypes.string,
   bgColor: PropTypes.string,
+  placeholder: PropTypes.string,
 }
 
 VideoCarousel.defaultProps = {
   season: null,
   title: null,
   bgColor: null,
+  placeholder: null,
 }
 
 export default VideoCarousel

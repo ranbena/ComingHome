@@ -84,13 +84,21 @@
 .main-video-container:before {
   content: '';
   position: absolute;
-  left: 70%;
-  top: -101px;
+  left: 78%;
+  top: -86px;
   background: url('../images/leaf-video-top.jpg') no-repeat 0 0/100%;
   width: 172px;
   height: 144px;
   pointer-events: none;
 }
+
+@media (max-width: 767px) {
+  .main-video-container:before {
+    left: 74%;
+    top: -90px;
+  }
+}
+
 
 @media (max-width: 575px) {
   .main-video-container:before {

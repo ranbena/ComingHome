@@ -13,6 +13,7 @@ import { MdLink } from "react-icons/md"
 import logo from "../images/footer-logo.png"
 import "./layout.css"
 
+
 const Layout = ({ children }) => {
   return (
     <>
@@ -38,10 +39,10 @@ const Layout = ({ children }) => {
           <Container>
             <div className="d-flex justify-content-between align-items-center">
               <a href="http://citytree.net/" target="_blank">
-                <MdLink /> To CityTree's website (hebrew)
+                <MdLink /> To CityTree's Website (עברית)
               </a>
               <a href="http://citytree.net/" target="_blank">
-                <img src={logo} alt="עץבעיר" height="100" />
+                <img src={logo} alt="CityTree" height="100" />
               </a>
               <div id="info">
                 We're here for you<br />

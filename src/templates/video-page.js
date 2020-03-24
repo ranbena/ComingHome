@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/SEO"
@@ -39,6 +39,9 @@ const VideoPostTemplate = ({ data, pageContext }) => {
             frameBorder="0"
           />
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <Link to="/" className="btn btn-primary">Back to Home</Link>
+          <br /><br />
         </article>
       </Container>
     </Layout>
