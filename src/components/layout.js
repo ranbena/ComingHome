@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       <Container>
         <header>
           <Navbar expand="lg">
-            <Navbar.Brand href="/cominghome">Coming Home</Navbar.Brand>
+            <Link className="navbar-brand" to="/">Coming Home</Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>        
               <Nav title="Coming Soon" className="mr-auto">

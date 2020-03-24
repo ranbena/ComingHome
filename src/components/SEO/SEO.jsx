@@ -6,7 +6,15 @@ import Facebook from './Facebook'
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
-const SEO = ({ title, desc, banner, pathname, article, node }) => {
+const getBannerUrl = (path, siteUrl) => {
+  if (/^http/.test(path)) {
+    return path;
+  }
+
+  return siteUrl+path;
+}
+
+const SEO = ({ title, desc, banner, pathname, article, date, node }) => {
   const { site } = useStaticQuery(query)
 
   const {
@@ -26,7 +34,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
   const seo = {
     title: title || defaultTitle,
     description: desc || defaultDescription,
-    image: `${siteUrl}${banner || defaultBanner}`,
+    image: getBannerUrl(banner || defaultBanner, siteUrl),
     url: `${siteUrl}${pathname || ''}`,
   }
 
@@ -50,7 +58,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
       '@type': 'Person',
       name: author,
     },
-    copyrightYear: '2019',
+    copyrightYear: '2020',
     creator: {
       '@type': 'Person',
       name: author,
@@ -59,7 +67,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
       '@type': 'Person',
       name: author,
     },
-    datePublished: '2019-01-18T10:30:00+01:00',
+    datePublished: '2020-03-23T10:00:00.000Z',
     dateModified: buildTime,
     image: {
       '@type': 'ImageObject',
@@ -94,7 +102,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
         '@type': 'Person',
         name: author,
       },
-      copyrightYear: '2019',
+      copyrightYear: '2020',
       creator: {
         '@type': 'Person',
         name: author,
@@ -107,8 +115,8 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
           url: `${siteUrl}${defaultBanner}`,
         },
       },
-      datePublished: node.first_publication_date,
-      dateModified: node.last_publication_date,
+      datePublished: date,
+      dateModified: date,
       description: seo.description,
       inLanguage: siteLanguage,
       url: seo.url,
@@ -144,7 +152,6 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
         <html lang={siteLanguage} />
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
-        <meta name="gatsby-starter" content="Gatsby Starter Prismic" />
         {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
         {!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
         {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
@@ -171,6 +178,7 @@ SEO.propTypes = {
   banner: PropTypes.string,
   pathname: PropTypes.string,
   article: PropTypes.bool,
+  date: PropTypes.string,
   node: PropTypes.object,
 }
 
@@ -180,6 +188,7 @@ SEO.defaultProps = {
   banner: null,
   pathname: null,
   article: false,
+  date: null,
   node: null,
 }
 

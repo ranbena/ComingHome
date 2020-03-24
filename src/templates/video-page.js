@@ -11,10 +11,16 @@ const VideoPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={`Coming Home Season ${season} Episode ${episode} - ${title}`} image={`https://img.youtube.com/vi/${youtube_id}/hqdefault.jpg`} />
+      <SEO
+        title={`Coming Home Season ${season} Episode ${episode} - ${title}`}
+        banner={`https://img.youtube.com/vi/${youtube_id}/hqdefault.jpg`}
+        article
+        date={date}
+        pathname={`/${post.fields.slug}`}
+      />
       <Container>
         <article>
-          <h1 class="mb-0">{title}</h1>
+          <h1 className="mb-0">{title}</h1>
           <div className="d-flex mb-3 align-items-center">
             <span className="flex-grow-1">Season {season}&nbsp; &middot; &nbsp;Episode {episode}&nbsp; &middot; &nbsp;{date}</span>
             <ShareActions url="http://citytree.net/cominghome" />
@@ -49,6 +55,9 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
