@@ -12,6 +12,7 @@ import MainVideo from "../components/main-video"
 const IndexPage = ({ data }) => {
   const [modalShow, setModalShow] = React.useState(false);
   const edges = data.allMarkdownRemark.edges
+  const { siteUrl } = data.site.siteMetadata
 
   return (
     <Layout>
@@ -31,7 +32,7 @@ const IndexPage = ({ data }) => {
           </Col>
           <Col sm={12} lg={8} className="main-video-container">
             <h1>Season 1 - Intro</h1>
-            <MainVideo />
+            <MainVideo siteUrl={siteUrl} />
           </Col>
         </Row>
       </Container>
@@ -70,6 +71,11 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date] }) {
       edges {
         node {

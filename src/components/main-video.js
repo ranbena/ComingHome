@@ -1,6 +1,7 @@
 import React from "react"
 // import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 // import { Tabs, Tab } from "react-bootstrap"
+import PropTypes from "prop-types"
 import { Button } from "react-bootstrap"
 import { MdPlayCircleOutline } from "react-icons/md";
 import ShareActions from "./share-actions"
@@ -27,7 +28,7 @@ const videos = [{
   static_file: S01I01,
 }]
 
-const MainVideo = () => {
+const MainVideo = ({ siteUrl }) => {
   const [currentVideoIdx, setCurrentVideoIdx] = React.useState(0)
   const { youtube_id, static_file } = videos[currentVideoIdx]
 
@@ -51,7 +52,7 @@ const MainVideo = () => {
             </div>
           ))}
         </div>
-        <ShareActions url="http://citytree.net/cominghome" staticFile={static_file} />
+        <ShareActions url={siteUrl} staticFile={static_file} />
       </div>
       {/* <Tabs defaultActiveKey="details">
         <Tab eventKey="details" title="Details">
@@ -69,6 +70,10 @@ const MainVideo = () => {
       </Tabs> */}
     </div>
   )
+}
+
+MainVideo.propTypes = {
+  siteUrl: PropTypes.string.isRequired,
 }
 
 export default MainVideo

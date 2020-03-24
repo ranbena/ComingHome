@@ -8,6 +8,9 @@ import ShareActions from "../components/share-actions"
 const VideoPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { title, season, episode, date, youtube_id } = post.frontmatter
+  const pathname = `/${post.fields.slug}`
+  const { siteUrl } = data.site.siteMetadata
+  console.log(data)
 
   return (
     <Layout>
@@ -16,14 +19,14 @@ const VideoPostTemplate = ({ data, pageContext }) => {
         banner={`https://img.youtube.com/vi/${youtube_id}/hqdefault.jpg`}
         article
         date={date}
-        pathname={`/${post.fields.slug}`}
+        pathname={pathname}
       />
       <Container>
         <article>
           <h1 className="mb-0">{title}</h1>
           <div className="d-flex mb-3 align-items-center">
             <span className="flex-grow-1">Season {season}&nbsp; &middot; &nbsp;Episode {episode}&nbsp; &middot; &nbsp;{date}</span>
-            <ShareActions url="http://citytree.net/cominghome" />
+            <ShareActions url={`${siteUrl}${pathname}`} />
           </div>
           <iframe
             className="video-iframe"
@@ -49,6 +52,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
