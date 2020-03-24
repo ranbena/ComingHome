@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
         </Row>
       </Container>
       <VideoCarousel edges={edges} season={1} title="Season 1 - The End of The World As We Know It" bgColor="#f7f8f7" />
-      <VideoCarousel edges={edges} season={2} title="Season 2" placeholder="Arriving April 30th" />
+      <VideoCarousel edges={edges} season={2} title="Season 2" placeholder="Arriving March 30th" />
       <section className="patron">
         <Container>
           <Row>

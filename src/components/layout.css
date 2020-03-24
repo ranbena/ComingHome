@@ -137,6 +137,8 @@ section.patron:after {
 section.community {
   position: relative;
   min-height: 372px;
+  display: flex;
+  align-items: center;
 }
 
 section.community:after {
