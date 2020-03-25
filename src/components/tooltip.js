@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Button, OverlayTrigger, Tooltip as BSTooltip } from "react-bootstrap"
+import { OverlayTrigger, Tooltip as BSTooltip } from "react-bootstrap"
 
 const Tooltip = ({ title, placement, children }) => (
   <OverlayTrigger
