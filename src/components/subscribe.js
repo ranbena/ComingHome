@@ -1,31 +1,27 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import { Modal, Button, Carousel } from "react-bootstrap"
+import { Modal } from "react-bootstrap"
 
-const SubscribeModal = (props) => {
-  const [index, setIndex] = useState(0);
-
-  return (
-    <Modal size="lg" centered {...props}>
-      <Modal.Header closeButton>
-        <h1>Get Video Release Notifications</h1>
-      </Modal.Header>
-      <Modal.Body>
-        <p>
-          Receive updates via email to get the latest on Coming Home.
-        </p>
-        <iframe
-          title="Subscribe"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeUb-y8CNOfEq5_z10NQPuA5FaHLMrkwnzZtbdkIb7ZoBUARQ/viewform?embedded=true"
-          width="100%"
-          height="380"
-          frameborder="0"
-          allowTransparency="false"
-        />
-      </Modal.Body>
-    </Modal>
-  )
-}
+const SubscribeModal = (props) => (
+  <Modal size="lg" centered {...props}>
+    <Modal.Header closeButton>
+      <h1>Get Video Release Notifications</h1>
+    </Modal.Header>
+    <Modal.Body>
+      <p>
+        Receive updates via email to get the latest on Coming Home.
+      </p>
+      <iframe
+        title="Subscribe"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeUb-y8CNOfEq5_z10NQPuA5FaHLMrkwnzZtbdkIb7ZoBUARQ/viewform?embedded=true"
+        width="100%"
+        height="380"
+        frameborder="0"
+        allowTransparency="false"
+      />
+    </Modal.Body>
+  </Modal>
+)
 
 SubscribeModal.propTypes = {
   onHide: PropTypes.func,

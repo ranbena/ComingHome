@@ -1,7 +1,7 @@
-import SEO from './SEO'
+import seo from './seo'
 import Facebook from './Facebook'
 import Twitter from './Twitter'
 
 export { Facebook, Twitter }
 
-export default SEO
+export default seo

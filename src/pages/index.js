@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Container, Row, Col, Button } from "react-bootstrap"
 
 import Layout from "../components/layout"
-import SEO from "../components/SEO"
+import seo from "../components/seo"
 import SubscribeModal from "../components/subscribe"
 import VideoCarousel from "../components/video-carousel"
 import MainVideo from "../components/main-video"
@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Coming Home" />
+      <seo title="Coming Home" />
       <Container className="mb-2">
         <Row>
           <Col sm={12} lg={9} className="main-video-container">

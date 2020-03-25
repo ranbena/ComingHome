@@ -38,10 +38,10 @@ const Layout = ({ children }) => {
         <footer>
           <Container>
             <div className="d-flex justify-content-between align-items-center">
-              <a href="http://citytree.net/" target="_blank">
+              <a href="http://citytree.net/" target="_blank" rel="noopener noreferrer">
                 <MdLink /> To CityTree's Website (עברית)
               </a>
-              <a href="http://citytree.net/" target="_blank">
+              <a href="http://citytree.net/" target="_blank" rel="noopener noreferrer">
                 <img src={logo} alt="CityTree" height="100" />
               </a>
               <div id="info">

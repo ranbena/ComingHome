@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { Container } from "react-bootstrap"
 import Layout from "../components/layout"
-import SEO from "../components/SEO"
+import seo from "../components/seo"
 import ShareActions from "../components/share-actions"
 
 const VideoPostTemplate = ({ data, pageContext }) => {
@@ -14,7 +14,7 @@ const VideoPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO
+      <seo
         title={`Coming Home Season ${season} Episode ${episode} - ${title}`}
         banner={`https://img.youtube.com/vi/${youtube_id}/hqdefault.jpg`}
         article

@@ -1,8 +1,8 @@
 import React from "react"
 // import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 // import { Tabs, Tab } from "react-bootstrap"
-import PropTypes from "prop-types"
 import { Button } from "react-bootstrap"
+import PropTypes from "prop-types"
 import { MdPlayCircleOutline } from "react-icons/md";
 import ShareActions from "./share-actions"
 import intro1 from "../../content/video-posts/S01Intros/S01-intro1.mp4"
@@ -49,10 +49,10 @@ const MainVideo = ({ siteUrl }) => {
       <div className="d-flex">
         <div className="videos">
           {videos.map(({ youtube_id }, idx) => (
-            <div className="video-thumb" onClick={() => setCurrentVideoIdx(idx)} data-selected={idx === currentVideoIdx}>
-              <img src={`https://img.youtube.com/vi/${youtube_id}/mqdefault.jpg`} />
+            <Button variant="link"className="video-thumb" onClick={() => setCurrentVideoIdx(idx)} data-selected={idx === currentVideoIdx}>
+              <img src={`https://img.youtube.com/vi/${youtube_id}/mqdefault.jpg`} alt={`Introduction video ${idx}`} />
               <MdPlayCircleOutline className="play-icon" />
-            </div>
+            </Button>
           ))}
         </div>
         <ShareActions url={siteUrl} staticFile={static_file} />
