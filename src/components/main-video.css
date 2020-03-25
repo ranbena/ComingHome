@@ -8,8 +8,8 @@
   margin-right: 10px;
   width: calc(25% - 10px);
   margin-bottom: 10px;
-  cursor: pointer;
   position: relative;
+  padding: 0;
 }
 
 .main-video .videos .video-thumb:after {

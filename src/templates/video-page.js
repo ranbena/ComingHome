@@ -41,7 +41,6 @@ const VideoPostTemplate = ({ data, pageContext }) => {
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
 
           <Link to="/" className="btn btn-primary">Back to Home</Link>
-          <br /><br />
         </article>
       </Container>
     </Layout>

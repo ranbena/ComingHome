@@ -161,6 +161,10 @@
   text-overflow: ellipsis;
 }
 
+.slick-prev, .slick-next {
+  margin-top: -14px; /* compensate for .metadata element height */
+}
+
 .slick-prev:before, .slick-next:before {
   color: var(--primary-color) !important;
 }

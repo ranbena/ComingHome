@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Container, Row, Col, Button } from "react-bootstrap"
+import { MdNotificationsActive } from "react-icons/md"
 
 import Layout from "../components/layout"
 import seo from "../components/seo"
@@ -26,8 +27,8 @@ const IndexPage = ({ data }) => {
           <Col sm={12} lg={3} className="mb-5">
             <h2 className="d-sm-none d-lg-block mt-5 pt-3">Overview</h2>
             <p>Coming Home is a video series that shares the “home-wisdom” of CityTree, an urban ecological learning center in the heart of Tel Aviv. As we collectively experience a collapse of the world as we know it, Tami Zori invites humanity into a new way of being--one that is in harmony with all life on Earth by reconnecting to our bodies, houses, and planet.</p>
-            <Button variant="primary" onClick={() => setModalShow(true)}>
-              Get Notifications
+            <Button variant="primary" onClick={() => setModalShow(true)} className="btn-notifications">
+              <MdNotificationsActive /> &nbsp; Get Notifications
             </Button>
             <SubscribeModal
               show={modalShow}
