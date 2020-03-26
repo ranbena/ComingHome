@@ -10,7 +10,7 @@ const NotFoundPage = () => (
     <seo title="Our Manifesto" />
     <Container className="static-page">
       <h1>About Us</h1>
-      <small className="underline">CityTree is a nurturing space for incubating a new, regenerative story for our society.</small>
+      <small className="underline">CityTree is a nurturing space for the renewed story of interconnectedness for our society.</small>
       <p>
         Since 2006, CityTree - an ecological oasis in a fast-paced, concrete-covered city - has been speaking climate truth. <strong>The truth is that our civilization and planet are in a state of breakdown on multiple levels - from the soil which is losing its fertility, to the global economy which is speeding off the rails of runaway growth.</strong>
         <br /><br />

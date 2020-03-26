@@ -21,12 +21,12 @@ const IndexPage = ({ data }) => {
       <Container className="mb-2">
         <Row>
           <Col sm={12} lg={9} className="main-video-container">
-            <h1>Introduction - <em>Coronavirus and Its Call to Come Home</em></h1>
+            <h1>Introduction - <em>Coronavirus is Calling Us Home</em></h1>
             <MainVideo siteUrl={siteUrl} />
           </Col>
           <Col sm={12} lg={3} className="mb-5">
             <h2 className="d-sm-none d-lg-block mt-5 pt-3">Overview</h2>
-            <p>Coming Home is a video series that shares the “home-wisdom” of CityTree, an urban ecological learning center in the heart of Tel Aviv. As we collectively experience a collapse of the world as we know it, Tami Zori invites humanity into a new way of being--one that is in harmony with all life on Earth by reconnecting to our bodies, houses, and planet.</p>
+            <p>Coming Home is a video series that shares the “home-wisdom” of CityTree, an urban ecological learning center in the heart of Tel Aviv. As we collectively experience a collapse of the world as we know it, Tami Zori invites us to rediscover harmony with all life on Earth by reconnecting to our own bodies and homes.</p>
             <Button variant="primary" onClick={() => setModalShow(true)} className="btn-notifications">
               <MdNotificationsActive /> &nbsp; Get Notifications
             </Button>
