@@ -85,7 +85,7 @@ const VideoCarousel  = ({ edges, season, bgColor, title, placeholder }) => {
 
 VideoCarousel.propTypes = {
   edges: PropTypes.array.isRequired,
-  season: PropTypes.string,
+  season: PropTypes.number,
   title: PropTypes.string,
   bgColor: PropTypes.string,
   placeholder: PropTypes.string,

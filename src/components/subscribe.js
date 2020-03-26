@@ -16,7 +16,7 @@ const SubscribeModal = (props) => (
         src="https://docs.google.com/forms/d/e/1FAIpQLSeUb-y8CNOfEq5_z10NQPuA5FaHLMrkwnzZtbdkIb7ZoBUARQ/viewform?embedded=true"
         width="100%"
         height="380"
-        frameborder="0"
+        frameBorder="0"
         allowTransparency="false"
       />
     </Modal.Body>

@@ -45,11 +45,11 @@ const MainVideo = ({ siteUrl }) => {
         width="100%"
         height="412"
         src={`https://www.youtube.com/embed/${youtube_id}?origin=http://citytree.com/cominghome&amp;playsinline=1&amp;color=white&amp;fs=1`}
-        frameborder="0" />
+        frameBorder="0" />
       <div className="d-flex">
         <div className="videos">
           {videos.map(({ youtube_id }, idx) => (
-            <Button variant="link"className="video-thumb" onClick={() => setCurrentVideoIdx(idx)} data-selected={idx === currentVideoIdx}>
+            <Button key={`video-${idx}`} variant="link"className="video-thumb" onClick={() => setCurrentVideoIdx(idx)} data-selected={idx === currentVideoIdx}>
               <img src={`https://img.youtube.com/vi/${youtube_id}/mqdefault.jpg`} alt={`Introduction video ${idx}`} />
               <MdPlayCircleOutline className="play-icon" />
             </Button>

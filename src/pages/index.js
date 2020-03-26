@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from "react-bootstrap"
 import { MdNotificationsActive } from "react-icons/md"
 
 import Layout from "../components/layout"
-import seo from "../components/seo"
+import Seo from "../components/Seo"
 import SubscribeModal from "../components/subscribe"
 import VideoCarousel from "../components/video-carousel"
 import MainVideo from "../components/main-video"
@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <seo title="Coming Home" />
+      <Seo title="Coming Home" />
       <Container className="mb-2">
         <Row>
           <Col sm={12} lg={9} className="main-video-container">

@@ -2,12 +2,12 @@ import React from "react"
 import { Container, Button } from "react-bootstrap"
 
 import Layout from "../components/layout"
-import seo from "../components/seo"
+import Seo from "../components/Seo"
 import "./static-page.css"
 
 const NotFoundPage = () => (
   <Layout>
-    <seo title="Our Manifesto" />
+    <Seo title="About Us" desc="CityTree is a nurturing space for the renewed story of interconnectedness for our society." />
     <Container className="static-page">
       <h1>About Us</h1>
       <small className="underline">CityTree is a nurturing space for the renewed story of interconnectedness for our society.</small>
