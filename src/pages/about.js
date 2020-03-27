@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/Seo"
 import "./static-page.css"
 
-const NotFoundPage = () => (
+const AboutPAge = () => (
   <Layout>
     <Seo title="About Us" desc="CityTree is a nurturing space for the renewed story of interconnectedness for our society." />
     <Container className="static-page">
@@ -37,4 +37,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default NotFoundPage
+export default AboutPAge

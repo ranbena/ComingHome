@@ -3,7 +3,7 @@ module.exports = {
     title: `Coming Home`,
     author: `@ranbena`,
     siteUrl: `http://citytree.net/cominghome`,
-    description: `A free online platform that gives you a practical toolkit to help tell a new story to the world.`,
+    description: `A video series that shares the “home-wisdom” of CityTree, an urban ecological learning center in the heart of Tel Aviv`,
     banner: `/og.png`,
     siteLanguage: `en`,
     ogLanguage: `en_US`,
