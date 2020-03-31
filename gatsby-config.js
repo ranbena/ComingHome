@@ -4,7 +4,7 @@ module.exports = {
     author: `@ranbena`,
     siteUrl: `http://citytree.net/cominghome`,
     description: `A video series that shares the “home-wisdom” of CityTree, an urban ecological learning center in the heart of Tel Aviv`,
-    banner: `/og.png`,
+    banner: `/og.jpeg`,
     siteLanguage: `en`,
     ogLanguage: `en_US`,
     facebook: `Coming Home`,
