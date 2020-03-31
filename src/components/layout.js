@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
               <Nav className="mr-auto">
                 <Tooltip title="Coming soon">
                   <span>
-                    <Link to="manifesto" className="nav-link disabled">Our Manifesto</Link>
+                    <Link to="manifesto" className="nav-link disabled">Home Manifesto</Link>
                   </span>
                 </Tooltip>
                 <Tooltip title="Coming soon">
