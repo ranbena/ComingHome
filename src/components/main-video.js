@@ -18,13 +18,13 @@ import "./main-video.css"
 // }
 
 const videos = [{
-  youtube_id: '4bHQXiLrnhk',
+  youtube_id: 'e-1WTp5DYrY',
   static_file: intro1,
 }, {
   youtube_id: '1EeryjflCrk',
   static_file: intro2,
 }, {
-  youtube_id: 'kAkueYwyg6Y',
+  youtube_id: 'j0mpaE_fAkA',
   static_file: intro3,
 }, {
   youtube_id: 'yIX9gT5mYGo',
