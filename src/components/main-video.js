@@ -8,7 +8,6 @@ import ShareActions from "./share-actions"
 import intro1 from "../../content/video-posts/S01Intros/S01-intro1.mp4"
 import intro2 from "../../content/video-posts/S01Intros/S01-intro2.mp4"
 import intro3 from "../../content/video-posts/S01Intros/S01-intro3.mp4"
-import intro4 from "../../content/video-posts/S01Intros/S01-intro4.mp4"
 import "./main-video.css"
 
 // const disqusConfig = {
@@ -21,14 +20,11 @@ const videos = [{
   youtube_id: 'e-1WTp5DYrY',
   static_file: intro1,
 }, {
-  youtube_id: '1EeryjflCrk',
+  youtube_id: 'j0mpaE_fAkA',
   static_file: intro2,
 }, {
-  youtube_id: 'j0mpaE_fAkA',
+  youtube_id: 'YWfSkpdd6N8',
   static_file: intro3,
-}, {
-  youtube_id: 'yIX9gT5mYGo',
-  static_file: intro4,
 }]
 
 const MainVideo = ({ siteUrl }) => {
