@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-                youtube_id
+                youtube_video_id
               }
             }
           }
@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   posts.forEach((post, index) => {
     // don't create page for unpublished videos
-    if (!post.node.frontmatter.youtube_id) {
+    if (!post.node.frontmatter.youtube_video_id) {
       return;
     }
 

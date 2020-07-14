@@ -17,19 +17,19 @@ import "./main-video.css"
 // }
 
 const videos = [{
-  youtube_id: 'e-1WTp5DYrY',
+  youtube_video_id: 'e-1WTp5DYrY',
   static_file: intro1,
 }, {
-  youtube_id: 'j0mpaE_fAkA',
+  youtube_video_id: 'j0mpaE_fAkA',
   static_file: intro2,
 }, {
-  youtube_id: 'YWfSkpdd6N8',
+  youtube_video_id: 'YWfSkpdd6N8',
   static_file: intro3,
 }]
 
 const MainVideo = ({ siteUrl }) => {
   const [currentVideoIdx, setCurrentVideoIdx] = React.useState(0)
-  const { youtube_id, static_file } = videos[currentVideoIdx]
+  const { youtube_video_id, static_file } = videos[currentVideoIdx]
 
   return (
     <div className="main-video">
@@ -40,13 +40,13 @@ const MainVideo = ({ siteUrl }) => {
         type="text/html"
         width="100%"
         height="412"
-        src={`https://www.youtube.com/embed/${youtube_id}?origin=http://citytree.com/cominghome&amp;playsinline=1&amp;color=white&amp;fs=1`}
+        src={`https://www.youtube.com/embed/${youtube_video_id}?origin=http://citytree.com/cominghome&amp;playsinline=1&amp;color=white&amp;fs=1`}
         frameBorder="0" />
       <div className="d-flex">
         <div className="videos">
-          {videos.map(({ youtube_id }, idx) => (
+          {videos.map(({ youtube_video_id }, idx) => (
             <Button key={`video-${idx}`} variant="link"className="video-thumb" onClick={() => setCurrentVideoIdx(idx)} data-selected={idx === currentVideoIdx}>
-              <img src={`https://img.youtube.com/vi/${youtube_id}/mqdefault.jpg`} alt={`Introduction video ${idx}`} />
+              <img src={`https://img.youtube.com/vi/${youtube_video_id}/mqdefault.jpg`} alt={`Introduction video ${idx}`} />
               <MdPlayCircleOutline className="play-icon" />
             </Button>
           ))}

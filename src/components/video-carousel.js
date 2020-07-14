@@ -48,12 +48,12 @@ const VideoCarousel  = ({ edges, season, bgColor, title, placeholder }) => {
           <Slider {...settings}>
             {sorted.map(({ node }) => {
               const { slug } = node.fields
-              const { title, episode, date, youtube_id, duration } = node.frontmatter
+              const { title, episode, date, youtube_video_id, duration } = node.frontmatter
               
               return (
                 <div className="video-item" key={slug}>
-                  {youtube_id ? (
-                    <Link to={slug} style={{backgroundImage: `url(https://img.youtube.com/vi/${youtube_id}/hqdefault.jpg)`}}>
+                  {youtube_video_id ? (
+                    <Link to={slug} style={{backgroundImage: `url(https://img.youtube.com/vi/${youtube_video_id}/hqdefault.jpg)`}}>
                       <MdPlayCircleOutline className="play-icon" />
                       <span className="video-text">
                         <strong>{title}</strong>
@@ -62,12 +62,13 @@ const VideoCarousel  = ({ edges, season, bgColor, title, placeholder }) => {
                     </Link>
                   ) : (
                     <div className="video-unpublished">
-                      {date}
+                      {date || 'Coming Soon'}
                       <div className="lock-icon"><MdLockOutline /></div>
                     </div>
                   )}
                   <div className="metadata">
-                    {!!season && <strong>Episode {episode}</strong>}
+                    {!!season && !episode && <strong>Intro</strong>}
+                    {!!season && !!episode && <strong>Episode {episode}</strong>}
                     {!!(season && title) && ": "}
                     {title}
                   </div>

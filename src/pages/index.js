@@ -37,8 +37,9 @@ const IndexPage = ({ data }) => {
           </Col>
         </Row>
       </Container>
-      <VideoCarousel edges={edges} season={1} title="Season 1 - The End of The World As We Know It" bgColor="#f7f8f7" />
-      <VideoCarousel edges={edges} season={2} title="Season 2" placeholder="Arriving May 6th" />
+      <VideoCarousel edges={edges} season={1} title="Spring 2020 - Time for Nourishment" bgColor="#f7f8f7" />
+      <VideoCarousel edges={edges} season={2} title="Spring 2020 - Time for Usability" />
+      <VideoCarousel edges={edges} season={3} title="Summer 2020 - Mobility" placeholder="Arriving June 21st" bgColor="#f7f8f7" />
       <section className="patron">
         <Container>
           <Row>
@@ -94,7 +95,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD")
-            youtube_id
+            youtube_video_id
             season
             episode
             duration

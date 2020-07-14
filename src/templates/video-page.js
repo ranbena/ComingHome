@@ -7,16 +7,18 @@ import ShareActions from "../components/share-actions"
 
 const VideoPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
-  const { title, season, episode, date, youtube_id } = post.frontmatter
+  const { title, season, episode, date, youtube_video_id, youtube_playlist_id } = post.frontmatter
   const pathname = `/${post.fields.slug}`
   const { siteUrl } = data.site.siteMetadata
-  console.log(data)
+  
+  const episodeText = episode ? `Episode ${episode}` : "Intro"
+  const titleText = `Coming Home Season ${season} ${episodeText} - ${title}`
 
   return (
     <Layout>
       <Seo
-        title={`Coming Home Season ${season} Episode ${episode} - ${title}`}
-        banner={`https://img.youtube.com/vi/${youtube_id}/hqdefault.jpg`}
+        title={titleText}
+        banner={`https://img.youtube.com/vi/${youtube_video_id}/hqdefault.jpg`}
         article
         date={date}
         pathname={pathname}
@@ -25,14 +27,14 @@ const VideoPostTemplate = ({ data, pageContext }) => {
         <article>
           <h1 className="mb-0">{title}</h1>
           <div className="d-flex mb-3 align-items-center">
-            <span className="flex-grow-1">Season {season}&nbsp; &middot; &nbsp;Episode {episode}&nbsp; &middot; &nbsp;{date}</span>
+            <span className="flex-grow-1">Season {season}&nbsp; &middot; &nbsp;{episodeText}&nbsp; &middot; &nbsp;{date}</span>
             <ShareActions url={`${siteUrl}${pathname}`} />
           </div>
           <iframe
             className="video-iframe"
             title="video-page"
             allowFullScreen="allowFullScreen"
-            src={`https://www.youtube.com/embed/${youtube_id}?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560`}
+            src={`https://www.youtube.com/embed/${youtube_video_id}?listType=playlist&amp;list=${youtube_playlist_id}&amp;ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560`}
             width="100%"
             height="600"
             allowtransparency="true"
@@ -67,7 +69,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        youtube_id
+        youtube_video_id
+        youtube_playlist_id
         season
         episode
         duration
